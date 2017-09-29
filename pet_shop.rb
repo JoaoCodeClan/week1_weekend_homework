@@ -11,6 +11,11 @@ end
   return total
 end
 
+def add_or_remove_cash(pet_shop, amount)
+ total = pet_shop[:admin][:total_cash] += amount
+ return total
+end
+
 def pets_sold(pet_shop)
   return pet_shop[:admin][:pets_sold]
 end
@@ -30,9 +35,13 @@ pets =[]
 for breed in pet_shop[:pets]
   if  breed[:breed] == breed_name
     pets.push(breed[:name])#also tried breed[:breed] and (1) and worked...confused need to review this#
+  elsif  breed[:breed] != breed_name
+    nil
   end
-pets.count
+  pets.count
 end
 
   return pets
 end
+
+#confused regarding this exercise as one method seems to be passing both test regarding breed#
