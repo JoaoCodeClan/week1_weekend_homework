@@ -10,3 +10,7 @@ end
   total = pet_shop[:admin][:total_cash] += amount
   return total
 end
+
+def pets_sold(pet_shop)
+  return pet_shop[:admin][:pets_sold]
+end
