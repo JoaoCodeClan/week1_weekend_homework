@@ -6,14 +6,14 @@ def total_cash(pet_shop)
   return pet_shop[:admin][:total_cash]
 end
 
- def add_or_remove_cash(pet_shop, amount)
+def add_or_remove_cash(pet_shop, amount)
   total = pet_shop[:admin][:total_cash] += amount
   return total
 end
 
 def add_or_remove_cash(pet_shop, amount)
- total = pet_shop[:admin][:total_cash] += amount
- return total
+  total = pet_shop[:admin][:total_cash] += amount
+  return total
 end
 
 def pets_sold(pet_shop)
@@ -31,17 +31,26 @@ def stock_count(pet_shop)
 end
 
 def pets_by_breed(pet_shop, breed_name)
-pets =[]
-for breed in pet_shop[:pets]
-  if  breed[:breed] == breed_name
-    pets.push(breed[:name])#also tried breed[:breed] and (1) and worked...confused need to review this#
-  elsif  breed[:breed] != breed_name
-    nil
+  pets =[]
+  for breed in pet_shop[:pets]
+    if  breed[:breed] == breed_name
+      pets.push(breed[:name])#also tried breed[:breed] and (1) and worked...confused need to review this#
+    elsif  breed[:breed] != breed_name
+      nil
+    end
+    pets.count
   end
-  pets.count
-end
-
   return pets
 end
 
 #confused regarding this exercise as one method seems to be passing both test regarding breed#
+
+def find_pet_by_name(shop, name_string)
+pet = {}
+for pet_name in shop[:pets]
+if pet_name[:name] == name_string
+  pet = { :name => name_string}
+end
+end
+return pet
+end
