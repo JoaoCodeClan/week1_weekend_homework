@@ -43,30 +43,13 @@ def pets_by_breed(pet_shop, breed_name)
   return pets
 end
 
-#confused regarding this exercise as one method seems to be passing both test regarding breed#
+def find_pet_by_name(shop, name_string)
 
-=begin def find_pet_by_name(shop, name_string)
-pet = {}
-for pet_name in shop[:pets]
-if pet_name[:name] == name_string
-pet = { :name => name_string}
+  for pet_name in shop[:pets]
+    if pet_name[:name] == name_string
+      return pet_name
+
+    end
+  end
+  return nil
 end
-end
-return pet
-=end
-#def find_pet_by_name(shop, name_string)
-#  pet = {}
-  #for pet_name in shop[:pets]
-
-  #  if (pet_name[:name] == name_string) == true
-    #  pet = { :name => name_string}
-
-
-  #  end
-
-  #end
-  #return pet
-#else
-  # nil
-
-#end
