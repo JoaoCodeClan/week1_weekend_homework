@@ -35,8 +35,7 @@ def pets_by_breed(pet_shop, breed_name)
   for breed in pet_shop[:pets]
     if  breed[:breed] == breed_name
       pets.push(breed[:name])#also tried breed[:breed] and (1) and worked...confused need to review this#
-    else  breed[:breed] != breed_name
-
+      #else  breed[:breed] != breed_name
     end
     pets.count
   end
@@ -48,7 +47,6 @@ def find_pet_by_name(shop, name_string)
   for pet_name in shop[:pets]
     if pet_name[:name] == name_string
       return pet_name
-
     end
   end
   return nil
@@ -84,9 +82,10 @@ def customer_can_afford_pet(costumer, new_pet)
 end
 
 def sell_pet_to_customer(shop, pet_name, customer)
-if ((pet_name != nil) && (customer_can_afford_pet(customer, pet_name)))
-  add_pet_to_customer(customer, pet_name)
-  increase_pets_sold(shop,1)
-  add_or_remove_cash(shop, pet_name[:price])
-end
+     find_pet_by_name(shop, pet_name)
+  if ((pet_name != nil) && (customer_can_afford_pet(customer, pet_name)))
+    add_pet_to_customer(customer, pet_name)
+    increase_pets_sold(shop,1)
+    add_or_remove_cash(shop, pet_name[:price])
+  end
 end
